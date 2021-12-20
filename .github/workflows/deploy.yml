@@ -17,9 +17,8 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSH_KEY }}
         with:
-          source: "Puffy-Bot/*"
+          source: "."
           target: "/var/Discord/Puffy-Bot"
-          strip_components: 1
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
