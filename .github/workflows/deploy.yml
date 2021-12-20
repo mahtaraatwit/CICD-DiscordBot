@@ -19,6 +19,7 @@ jobs:
         with:
           source: "Puffy-Bot/*"
           target: "/var/Discord/Puffy-Bot"
+          strip_components: 1
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
