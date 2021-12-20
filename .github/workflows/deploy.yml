@@ -17,7 +17,7 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSH_KEY }}
         with:
-          source: "C:\Users\mahtara\Discord Bots\Puffy-Bot"
+          source: "."
           target: "/var/Discord/Puffy-Bot"
 
       - name: Executing remote command
