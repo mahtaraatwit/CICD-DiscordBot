@@ -3,9 +3,6 @@ name: Deploy
 on:
   push:
     - branch: [main]
-  workflow_dispatch:
-  schedule:
-    - cron: "*/3 * * * *"
 # a wforkflow  run is made up of one or more jobs that run sequentially unless told otherwise
 jobs:
   build:
