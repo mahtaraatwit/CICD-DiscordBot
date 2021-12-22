@@ -39,6 +39,7 @@ jobs:
         run: |
           touch .env
           echo TOKEN=$TOKEN >> .env
+          cat .env
       - name: Execute commands to start bot
         shell: bash
         run: |
