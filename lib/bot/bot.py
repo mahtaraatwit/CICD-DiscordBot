@@ -23,7 +23,7 @@ EMBEDS = [path.split("\\")[-1][:-3] for path in glob("./lib/embed/*.py")]
 PREFIX = "+"
 OWNER_ID = [732756725685289023]
 
-TOKEN = os.getenv('TOKEN')
+TOKEN = os.environ.get('TOKEN')
 
 
 class Bot(BotBase):

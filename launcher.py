@@ -1,4 +1,5 @@
 from lib.bot import bot
 
-bot = bot.Bot()
-bot.run()
+runner = bot.Bot()
+
+runner.run()
