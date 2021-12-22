@@ -30,4 +30,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           run: |
-            python ./Discord/launcher.py
+            cd Discord 
+            python launcher.py
