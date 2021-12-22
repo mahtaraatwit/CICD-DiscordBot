@@ -1,16 +1,18 @@
 # importing asyncio, discord.py and datetime for scheduler
 
 
+from discord import Embed
+from discord.ext.commands.bot import Bot as BotBase
 from glob import glob
 
 from discord import Intents
 import asyncio
 from datetime import datetime as dt
 import os
-from discord.ext.commands.bot import Bot as BotBase
+from dotenv import load_dotenv
+load_dotenv()
 #from apscheduler.schedulers.asyncio import AsyncIOScheduler
 #from apscheduler.triggers.cron import CronTrigger
-from discord import Embed
 
 
 COGS = [path.split("\\")[-1][:-3] for path in glob("./lib/cogs/*.py")]
@@ -20,6 +22,8 @@ EMBEDS = [path.split("\\")[-1][:-3] for path in glob("./lib/embed/*.py")]
 PREFIX = "+"
 OWNER_ID = [732756725685289023]
 
+TOKEN = os.getenv('TOKEN')
+
 
 class Bot(BotBase):
     def __init__(self):
@@ -27,7 +31,7 @@ class Bot(BotBase):
         self.ready = False
         self.guild = None
 
-        self.scheduler = AsyncIOScheduler()
+        #self.scheduler = AsyncIOScheduler()
 
         super().__init__(
             command_prefix=PREFIX,
