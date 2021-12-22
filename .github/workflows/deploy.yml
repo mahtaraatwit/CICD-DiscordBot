@@ -32,7 +32,15 @@ jobs:
       - name: Install dependencies
         run: |
           pipenv install
+      - name: Create ENV file
+        shell: bash
+        env:
+          TOKEN: $ {{ secrets.TOKEN }}
+        run: |
+          touch .env
+          echo TOKEN=$TOKEN >> .env
       - name: Execute commands to start bot
+        shell: bash
         run: |
           pipenv run python launcher.py
 
