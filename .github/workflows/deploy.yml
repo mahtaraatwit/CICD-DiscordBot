@@ -22,14 +22,8 @@ jobs:
           timeout: 300s
           source: "."
           target: "~/Discord"
-
-      - name: Executing remote command
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSHKEY }}
-          shell: bash
-          run: |
-            python3 launcher.py
-          working-directory: ./Discord
+      - name: Execute commands to start bot
+        working-directory: ./Discord
+        shell: bash
+        run: |
+          python3 launcher.py
