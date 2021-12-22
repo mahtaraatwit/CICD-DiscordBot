@@ -25,7 +25,6 @@ jobs:
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
-        working-directory: ./Discord
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -33,3 +32,4 @@ jobs:
           shell: bash
           run: |
             python3 launcher.py
+          working-directory: ./Discord
