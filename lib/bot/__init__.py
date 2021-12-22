@@ -30,6 +30,7 @@ class Bot(BotBase):
         self.PREFIX = PREFIX
         self.ready = False
         self.guild = None
+        self.TOKEN = TOKEN
 
         #self.scheduler = AsyncIOScheduler()
 
