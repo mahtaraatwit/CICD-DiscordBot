@@ -29,4 +29,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          run: launcher.py
+          run: |
+            python launcher.py
