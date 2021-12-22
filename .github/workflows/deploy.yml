@@ -1,6 +1,7 @@
 name: Deploy
 
 on:
+  push: [main]
   workflow_dispatch:
   schedule:
     - cron: "*/3 * * * *"
