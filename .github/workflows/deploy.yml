@@ -22,8 +22,16 @@ jobs:
           timeout: 300s
           source: "."
           target: "~/Discord"
-      - name: Execute commands to start bot
-        working-directory: ~/Discord
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install pipenv
         run: |
-          ls -al
-          python3 launcher.py
+          python -m pip install --upgrade pip
+          pip isntall pipenv
+      - name: Install dependencies from requirements.txt
+        run: |
+          pipenv install -r ~/Discord/requirements.txt 
+      - name: Execute commands to start bot
+        run: |
+          pipenv run python launcher.py
