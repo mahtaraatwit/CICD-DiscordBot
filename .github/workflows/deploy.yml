@@ -35,7 +35,7 @@ jobs:
       - name: Create ENV file
         shell: bash
         env:
-          TOKEN: $ {{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
           touch .env
           echo TOKEN=$TOKEN >> .env
