@@ -27,7 +27,7 @@ class Bot(BotBase):
         self.ready = False
         self.guild = None
 
-        #self.scheduler = AsyncIOScheduler()
+        self.scheduler = AsyncIOScheduler()
 
         super().__init__(
             command_prefix=PREFIX,
