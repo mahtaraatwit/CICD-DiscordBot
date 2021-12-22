@@ -23,7 +23,7 @@ jobs:
           source: "."
           target: "~/Discord"
       - name: Execute commands to start bot
-        working-directory: ./Discord
         shell: bash
         run: |
           python3 launcher.py
+        working-directory: ./Discord
