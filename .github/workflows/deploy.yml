@@ -23,7 +23,7 @@ jobs:
           PORT: 22
         with:
           source: "."
-          target: "/var/Discord/Puffy-Bot"
+          target: "~/var/Discord/Puffy-Bot"
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
