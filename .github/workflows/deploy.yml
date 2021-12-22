@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    - branch: [main]
+    branches: [main]
 # a wforkflow  run is made up of one or more jobs that run sequentially unless told otherwise
 jobs:
   build:
