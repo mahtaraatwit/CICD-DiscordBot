@@ -19,15 +19,13 @@ jobs:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           KEY: ${{ secrets.SSHKEY }}
-          PORT: 22
           source: "."
-          target: "~/var/Discord/Puffy-Bot"
+          target: "~/Discord"
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
-          PORT: 22
           KEY: ${{ secrets.SSHKEY }}
           script: launcher.py
