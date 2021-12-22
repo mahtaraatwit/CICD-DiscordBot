@@ -31,7 +31,7 @@ jobs:
           pip install pipenv
       - name: Install dependencies from requirements.txt
         run: |
-          pipenv install -r requirements.txt
+          pipenv install
       - name: Execute commands to start bot
         run: |
           pipenv run python launcher.py
