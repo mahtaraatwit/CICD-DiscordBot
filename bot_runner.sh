@@ -7,3 +7,4 @@ sudo rm cron_bkp
 
 pipenv shell
 pipenv run python launcher.py
+exit 0
