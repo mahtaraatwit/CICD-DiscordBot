@@ -29,5 +29,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          script: bot_runner.sh
+          script: /Discord/bot_runner.sh
 #random comment to add f
