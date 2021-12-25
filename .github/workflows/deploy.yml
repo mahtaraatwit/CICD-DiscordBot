@@ -12,13 +12,15 @@ jobs:
       #actions checkout is prebuilt actions
       # checks=out your rep under $GITHUB_WORKSPACE, so our job can access it
       - uses: actions/checkout@master
+
       - name: Copy repository contents via scp
         uses: appleboy/scp-action@master
-        with:
+        env:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           timeout: 300s
+        with:
           source: "."
           target: "~/Discord"
 #random comment to add f
