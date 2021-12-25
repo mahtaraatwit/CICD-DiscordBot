@@ -22,7 +22,7 @@ jobs:
           timeout: 300s
           source: "."
           target: "~/Discord"
-
+'''
       - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
@@ -32,6 +32,5 @@ jobs:
           script: |
             cd ~/Discord
             chmod +x ./bot_runner.sh
-            source bot_runner.sh
-
+'''
 #random comment to add f
