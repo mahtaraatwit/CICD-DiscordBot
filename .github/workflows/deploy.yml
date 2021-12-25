@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd /Discord
+            cd ~/Discord
             pipenv shell
             pipenv run python launcher.py
             sudo crontab -l > cron_bkp
