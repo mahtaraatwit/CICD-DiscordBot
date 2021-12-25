@@ -7,8 +7,9 @@ name = "pypi"
 "discord.py" = "*"
 python-dotenv = "*"
 sanic = "*"
+flask = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.8"

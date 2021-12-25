@@ -1,14 +1,15 @@
-from sanic import Sanic
-from sanic import response
-  
-app = Sanic("Puffy-Bot")
-  
-  
-# webapp path defined used route decorator
-@app.route("/")
-def run(request):
-    return response.text("Online . . .")
-  
-  
-# debug logs enabled with debug = True
-app.run(host ="0.0.0.0", port = 8000, debug = True)
+from flask import Flask
+from threading import Thread
+
+app = Flask('Puffy-Bot')
+
+@app.route('/')
+def home():
+    return "Online . . ."
+
+def run():
+  app.run(host='0.0.0.0',port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
