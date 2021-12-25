@@ -1,11 +1,13 @@
-name: Deploy Discord Bot to DO droplet
+name: CI/CD for Puffy Bot
 
 on:
   push:
     branches: [main]
 # a wforkflow  run is made up of one or more jobs that run sequentially unless told otherwise
 jobs:
+
   build:
+    name: Copy repo 
     runs-on: ubuntu-latest
     steps:
       #actions checkout is prebuilt actions
