@@ -5,15 +5,14 @@ on:
     branches: [main]
 # a wforkflow  run is made up of one or more jobs that run sequentially unless told otherwise
 jobs:
-
   build:
-    name: Copy repo 
     runs-on: ubuntu-latest
+
     steps:
       #actions checkout is prebuilt actions
       # checks=out your rep under $GITHUB_WORKSPACE, so our job can access it
-        uses: actions/checkout@master
-      - name: Step 1 - Copy repository contents via scp
+      - uses: actions/checkout@master
+      - name: Copy repository contents via scp
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
