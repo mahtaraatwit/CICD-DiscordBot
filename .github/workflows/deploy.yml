@@ -31,6 +31,7 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: |
             cd ~/Discord
-            sudo ./bot_runner.sh
+            chmod +x ./bot_runner.sh
+            source bot_runner.sh
 
 #random comment to add f
