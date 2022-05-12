@@ -1,6 +1,7 @@
 import asyncio
 from http import client
 import imp
+from multiprocessing.connection import Listener
 from tabnanny import check 
 from discord.ext.commands import Cog 
 from discord.ext.commands import command
@@ -13,7 +14,7 @@ class Octopus(Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @client.event
+    @Cog.listener()
     def check(ctx):
         return ctx.author.id == 974024384450809916
 
