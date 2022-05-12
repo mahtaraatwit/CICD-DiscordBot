@@ -16,7 +16,7 @@ load_dotenv()
 #from apscheduler.triggers.cron import CronTrigger
 
 
-COGS = ["fish"]
+COGS = ["fish", "octopus"]
 
 EMBEDS = [path.split("\\")[-1][:-3] for path in glob("./lib/embed/*.py")]
 
