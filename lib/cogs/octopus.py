@@ -15,8 +15,8 @@ class Octopus(Cog):
         self.bot = bot
     
     @Cog.listener()
-    def check(ctx):
-        return ctx.author.id == 974024384450809916
+    async def check(ctx):
+        return ctx.author.id == 974436550123335721
 
     @command(name="octupus")
     async def he_is_here(self, ctx):
