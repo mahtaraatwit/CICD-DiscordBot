@@ -18,10 +18,10 @@ class Octopus(Cog):
     async def check(ctx):
         return ctx.author.id == 974436550123335721
 
-    @command(name="octupus")
+    @command(name="octopus")
     async def he_is_here(self, ctx):
         if check:
-            await ctx.send(file=File('pus.png'))
+            await ctx.send(file=File('pus.jpg'))
 
 def setup(bot):
     bot.add_cog(Octopus(bot))
