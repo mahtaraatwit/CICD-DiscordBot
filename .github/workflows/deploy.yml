@@ -9,27 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      #actions checkout is prebuilt actions
-      # checks=out your rep under $GITHUB_WORKSPACE, so our job can access it
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
-      - name: Copy repository contents via scp
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSHKEY }}
-          timeout: 300s
-          source: "."
-          target: "~/Discord"
+      - name: Set up python env
+      - uses: actions/setup-python@v1
+      - with:
+        python-version: 3.8.3
+      - name: install pipenv 
+        run: pip install pipenv
+      - name: run discord bot 
+        run: |
+          pipenv install 
+          pipenv shell
+          py ./testlauncher.py 
+      
 
-      # - name: Executing remote command
-      # uses: appleboy/ssh-action@master
-      # with:
-      # host: ${{ secrets.HOST }}
-      # username: ${{ secrets.USERNAME }}
-      # key: ${{ secrets.SSHKEY }}
-      # script: |
-      # cd ~/Discord
-      # chmod +x ./bot_runner.sh
-#random comment to add f
+

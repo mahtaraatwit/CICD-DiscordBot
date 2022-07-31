@@ -1,15 +1,18 @@
 # importing asyncio, discord.py and datetime for scheduler
 
 
+from discord import Color as c
 from discord import Embed
 from discord.ext.commands.bot import Bot as BotBase
 from glob import glob
-
 from discord import Intents
 import asyncio
 from datetime import datetime as dt
 import os
 from dotenv import load_dotenv
+from discord import channel
+
+from lib.embeds.custom_embed import ready_Embed
 load_dotenv()
 
 #from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -23,7 +26,9 @@ EMBEDS = [path.split("\\")[-1][:-3] for path in glob("./lib/embed/*.py")]
 PREFIX = "+"
 OWNER_ID = [732756725685289023]
 
-TOKEN = os.environ.get('TOKEN')
+TOKEN = 884246929670811718
+
+#os.environ.get('TOKEN')
 
 
 class Bot(BotBase):
@@ -47,7 +52,7 @@ class Bot(BotBase):
         self.setup()
 
         print("running fishy bot...")
-        super().run(self.TOKEN, reconnect=True)
+        super().run("ODg0MjQ2OTI5NjcwODExNzE4.Go_jGn.Lf4kdrx0-tmwb6bS_GAhLMG1C1jkZ4aPKGfyTI", reconnect=True)
 
     def setup(self):
         for cog in COGS:
@@ -71,6 +76,9 @@ class Bot(BotBase):
 
             print("bot ready")
 
+            embed = Embed(title="wee",color=c.teal())
+            
+            await self.channel.send(embed=embed)
         else:
             print("bot reconnected")
 

@@ -1,9 +1,12 @@
-from discord import Embed as Embeds
+from discord import Color
+from discord import Embed as Embed
 from datetime import datetime as dt
 
 
-class ready_Embed(Embeds):
-    def __init__(self, bot):
-        self.bot = bot
-        self.author = "amen"
-        self.footer = timestamp = dt.utcnow()
+class ready_Embed(Embed):
+    def __init__(self):
+        super().__init__()
+
+    
+
+
