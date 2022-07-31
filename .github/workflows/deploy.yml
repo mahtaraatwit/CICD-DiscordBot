@@ -20,7 +20,7 @@ jobs:
         run: |
           pipenv install 
           pipenv shell
-          py ./testlauncher.py 
+          pipenv run py ./testlauncher.py 
       
 
 
