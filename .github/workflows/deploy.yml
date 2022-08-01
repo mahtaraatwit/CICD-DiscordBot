@@ -16,7 +16,7 @@ jobs:
           python-version: 3.8.3
       - name: install pipenv/run bot
         uses: dschep/install-pipenv-action@v1
-      - run: pipenv run .\testlauncher.py 
+      - run: pipenv run launcher.py 
       
 
 
