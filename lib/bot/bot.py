@@ -26,9 +26,8 @@ EMBEDS = [path.split("\\")[-1][:-3] for path in glob("./lib/embed/*.py")]
 PREFIX = "+"
 OWNER_ID = [732756725685289023]
 
-TOKEN = 884246929670811718
 
-#os.environ.get('TOKEN')
+
 
 
 class Bot(BotBase):
@@ -36,7 +35,7 @@ class Bot(BotBase):
         self.PREFIX = PREFIX
         self.ready = False
         self.guild = None
-        self.TOKEN = TOKEN
+        self.TOKEN = os.environ.get('TOKEN')
 
         #self.scheduler = AsyncIOScheduler()
 
@@ -52,7 +51,7 @@ class Bot(BotBase):
         self.setup()
 
         print("running fishy bot...")
-        super().run("ODg0MjQ2OTI5NjcwODExNzE4.Go_jGn.Lf4kdrx0-tmwb6bS_GAhLMG1C1jkZ4aPKGfyTI", reconnect=True)
+        super().run(self.TOKEN, reconnect=True)
 
     def setup(self):
         for cog in COGS:
