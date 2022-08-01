@@ -18,9 +18,9 @@ jobs:
         uses: dschep/install-pipenv-action@v1
       - name: run discord bot 
         run: |
-          pip3 install --upgrade requests
           pipenv install 
           pipenv shell
+          pipenv install requests
           pipenv run py ./testlauncher.py 
       
 
