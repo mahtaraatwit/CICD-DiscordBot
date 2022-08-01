@@ -9,6 +9,7 @@ python-dotenv = "*"
 sanic = "*"
 flask = "*"
 requests = "*"
+urllib3 = "*"
 
 [dev-packages]
 
